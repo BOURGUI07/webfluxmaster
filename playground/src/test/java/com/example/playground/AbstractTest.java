@@ -3,11 +3,7 @@ package com.example.playground;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class PlaygroundApplicationTests {
-
-	@Test
-	void contextLoads() {
-	}
+@SpringBootTest(classes = PlaygroundApplication.class)
+public class AbstractTest {
 
 }
