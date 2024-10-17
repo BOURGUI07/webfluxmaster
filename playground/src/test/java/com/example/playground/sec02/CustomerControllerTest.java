@@ -108,5 +108,41 @@ public class CustomerControllerTest extends AbstractTest {
 
     }
 
+    @Test
+    void notFound(){
+        client
+                .get()
+                .uri("/customers/12")
+                .exchange()
+                .expectStatus().isNotFound()
+                .returnResult(CustomerResponse.class)
+                .getResponseBody()
+                .as(StepVerifier::create)
+                .verifyComplete();
+
+        var request = new CustomerRequest("youness","youness@gmail.com");
+        client
+                .put()
+                .uri("/customers/12")
+                .bodyValue(request)
+                .exchange()
+                .expectStatus().isNotFound()
+                .returnResult(CustomerResponse.class)
+                .getResponseBody()
+                .as(StepVerifier::create)
+                .verifyComplete();
+
+        client
+                .delete()
+                .uri("/customers/12")
+                .exchange()
+                .expectStatus().isNotFound()
+                .returnResult(CustomerResponse.class)
+                .getResponseBody()
+                .as(StepVerifier::create)
+                .verifyComplete();
+
+    }
+
 
 }
