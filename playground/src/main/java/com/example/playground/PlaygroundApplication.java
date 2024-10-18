@@ -4,8 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.r2dbc.repository.config.EnableR2dbcRepositories;
 
-@SpringBootApplication(scanBasePackages = "com.example.playground.sec06")
-@EnableR2dbcRepositories(basePackages = "com.example.playground.sec06")
+@SpringBootApplication(scanBasePackages = "com.example.playground.sec07")
+@EnableR2dbcRepositories(basePackages = "com.example.playground.sec07")
 public class PlaygroundApplication {
 
 	public static void main(String[] args) {
