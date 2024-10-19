@@ -1,6 +1,7 @@
 package com.example.playground.sec07;
 
 import com.example.playground.AbstractTest;
+import com.example.playground.sec07.dto.ProductRequest;
 import com.example.playground.sec07.dto.ProductResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,7 +26,7 @@ public class ServerSentTest extends AbstractTest {
     void testServerSent() {
         client
                 .get()
-                .uri("/products/stream/80")
+                .uri("/products/stream/808")
                 .accept(MediaType.TEXT_EVENT_STREAM)
                 .exchange()
                 .expectStatus().isOk()
@@ -34,7 +35,7 @@ public class ServerSentTest extends AbstractTest {
                 .collectList()
                 .as(StepVerifier::create)
                 .assertNext(list -> {
-                    assertEquals(6,list.size());
+                    assertEquals(1,list.size());
                     assertTrue(list.stream().allMatch(x->x.price()<=800));
                 })
                 .verifyComplete();

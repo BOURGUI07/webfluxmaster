@@ -1,0 +1,12 @@
+server:
+  port: 6060
+
+
+spring:
+  h2:
+    console:
+      enabled: true
+    r2dbc:
+      url: r2dbc:h2:mem:///project
+      username: sa
+      password:
