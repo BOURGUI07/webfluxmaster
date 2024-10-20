@@ -11,7 +11,4 @@ public record TradeRequest(
         Integer quantity,
         TickerAction tickerAction
 ) {
-    public Integer totalPrice() {
-        return price * quantity;
-    }
 }
