@@ -32,7 +32,7 @@ public class ApplicationExceptionHandler {
     public ProblemDetail handleInvalidTradeRequest(InvalidTradeRequestException ex){
         return handleProblem(ex, HttpStatus.BAD_REQUEST,
                 problemDetail -> {
-                    problemDetail.setTitle("Invalid trade Request");
+                    problemDetail.setTitle("Invalid trade request");
                     problemDetail.setType(URI.create("http://example.com/problems/invalidTradeRequest"));
                 });
     }

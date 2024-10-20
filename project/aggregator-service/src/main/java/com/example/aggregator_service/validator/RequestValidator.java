@@ -15,11 +15,11 @@ public class RequestValidator {
     }
 
     public static Predicate<TradeRequest> validateTicker(){
-        return dto -> Objects.nonNull(dto.quantity());
+        return dto -> Objects.nonNull(dto.ticker());
     }
 
     public static Predicate<TradeRequest> validateTickerAction(){
-        return dto -> Objects.nonNull(dto.quantity());
+        return dto -> Objects.nonNull(dto.tickerAction());
     }
 
     public static UnaryOperator<Mono<TradeRequest>> validate(){
